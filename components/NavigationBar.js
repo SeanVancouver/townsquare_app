@@ -9,7 +9,7 @@ const NavigationBar = () => {
   const [activeSection, setActiveSection] = useState('what_Project');
   const router = useRouter();
 
-  let { sharedState, setSharedState } = useContext(NavbarContext);  
+  // let { sharedState, setSharedState } = useContext(NavbarContext);  
 
   // switch (activeSection) {
   //   case 'what':
@@ -33,27 +33,27 @@ const NavigationBar = () => {
       <div style={{ display: "flex" }}>
         <button onClick={() => {
           router.push('/');
-          setSharedState('what_Project')
+          setActiveSection('what_Project')
         }}>What</button>
         <button onClick={() => {
           router.push('/why/empowerment');
-          setSharedState('why')
+          setActiveSection('why')
         }}>Why</button>
         <button onClick={() => {
           router.push('/how');
-          setSharedState('how_timeline')
+          setActiveSection('how_timeline')
         }}>How</button>
       </div>
 
       {/* Conditional rendering of sections based on the activeSection */}
       <div style={{ display: "flex", color: 'red' }}>
-        {sharedState === 'what_Project' && (
+        {activeSection === 'what_Project' && (
           <div id="what">
             <button>Project</button>
             <button>About me</button>
           </div>
         )}
-        {sharedState === 'why' && (
+        {activeSection === 'why' && (
           <div id="why">
             <button>Empowerment</button>
             <button>Better social media</button>
@@ -62,7 +62,7 @@ const NavigationBar = () => {
             <button>Human nature</button>
           </div>
         )}
-        {sharedState === 'how_timeline' && (
+        {activeSection === 'how_timeline' && (
           <div id="how">
             <button>Timeline</button>
             <button>You can help</button>

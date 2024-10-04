@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body>
         <NavbarProvider>
           {<NavigationBar />}
-          {<Header />}
+          {/* {<Header />} */}
           {children}
         </NavbarProvider>
       </body>
