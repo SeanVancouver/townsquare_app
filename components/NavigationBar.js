@@ -1,21 +1,45 @@
 'use client'
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'
 
 const NavigationBar = () => {
   // State to track the active section, defaulting to 'what'
   const [activeSection, setActiveSection] = useState('what');
+  const router = useRouter();
+
+  // switch (activeSection) {
+  //   case 'what':
+  //     break;
+
+  //   case value:
+
+  //     break;
+
+  //   case value:
+
+  //     break;
+
+  //   default:
+  //     break;
+  // }
 
   return (
     <div>
       {/* Buttons to switch between sections */}
       <div style={{ display: "flex" }}>
         <button onClick={() => {
-          console.log("asdfsd");
-          
-          setActiveSection('what')}}>What1</button>
-        <button onClick={() => setActiveSection('why')}>Why</button>
-        <button onClick={() => setActiveSection('how')}>How</button>
+          router.push('/');
+          setActiveSection('what')
+        }}>What</button>
+        <button onClick={() => {
+          router.push('/why/empowerment');
+          setActiveSection('why')
+        }}>Why</button>
+        <button onClick={() => {
+          router.push('/how');
+          setActiveSection('how')
+        }}>How</button>
       </div>
 
       {/* Conditional rendering of sections based on the activeSection */}
@@ -28,8 +52,8 @@ const NavigationBar = () => {
         )}
         {activeSection === 'why' && (
           <div id="why">
-            <button>Better social media</button>
             <button>Empowerment</button>
+            <button>Better social media</button>
             <button>Elites</button>
             <button>Capitalism</button>
             <button>Human nature</button>
