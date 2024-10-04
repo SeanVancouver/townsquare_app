@@ -1,6 +1,7 @@
 import "./globals.css";
 import NavigationBar from "@/components/NavigationBar";
 import Header from "@/components/Header";
+import { NavbarProvider } from "@/contexts/AppContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -9,14 +10,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  
+
   return (
     <html lang="en">
-      <body
-      >
-        {<NavigationBar />}
-        {<Header pageKey={"how_timeline"} />}
-        {children}
+      <body>
+        <NavbarProvider>
+          {<NavigationBar />}
+          {<Header pageKey={"how_timeline"} />}
+          {children}
+        </NavbarProvider>
       </body>
     </html>
   );

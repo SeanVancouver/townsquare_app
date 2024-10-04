@@ -1,16 +1,23 @@
 'use client'
 
-import Header from '@/components/Header';
 import { createContext, useContext, useState } from 'react';
 
 export const NavbarContext = createContext();
 
-export function Sidebar() {
-  const [sharedState, setSharedState] = useState('Initial value');
+export function NavbarProvider({ children }) {
+    const [sharedState, setSharedState] = useState('Initial value');
+    
+    return (
+        <NavbarContext.Provider value={{ sharedState, setSharedState }}>
+            {children}
+        </NavbarContext.Provider>
+    );
+}
 
-  return (
-    <NavbarContext.Provider value={{ sharedState }}>
-      <Header />
-    </NavbarContext.Provider>
-  );
+export function useNavbarContext() {
+    const context = useContext(NavbarContext);
+    if (context === undefined) {
+        throw new Error('useNavbarContext must be used within a NavbarProvider');
+    }
+    return context;
 }

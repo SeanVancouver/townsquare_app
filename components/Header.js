@@ -10,6 +10,7 @@ function Header({ pageKey }) {
     console.log("asdfdsf");
     console.log(sharedState);
     
+    return <><p>hello</p><p>Shared State: {sharedState}</p></>;
 
     switch (pageKey) {
         case "what_Project":
