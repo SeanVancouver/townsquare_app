@@ -1,9 +1,9 @@
 'use client'
 
 import { NavbarContext } from '@/contexts/AppContext';
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 
-function Header({ pageKey }) {
+function Header({ children }) {
     let content = null;
     let { sharedState } = useContext(NavbarContext);    
 
@@ -46,6 +46,10 @@ function Header({ pageKey }) {
     }
 
     return content;
+
+    // return <div>
+    //     {children}
+    // </div>;
 }
 
 export default Header
