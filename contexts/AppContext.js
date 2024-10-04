@@ -5,7 +5,7 @@ import { createContext, useContext, useState } from 'react';
 export const NavbarContext = createContext();
 
 export function NavbarProvider({ children }) {
-    const [sharedState, setSharedState] = useState('Initial value');
+    const [sharedState, setSharedState] = useState('what_Project');
     
     return (
         <NavbarContext.Provider value={{ sharedState, setSharedState }}>

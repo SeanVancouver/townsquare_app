@@ -15,8 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <NavbarProvider>
+          {<Header />}
           {<NavigationBar />}
-          {<Header pageKey={"how_timeline"} />}
           {children}
         </NavbarProvider>
       </body>

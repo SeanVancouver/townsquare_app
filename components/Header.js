@@ -7,12 +7,8 @@ function Header({ pageKey }) {
     let content = null;
     let { sharedState } = useContext(NavbarContext);    
 
-    console.log("asdfdsf");
-    console.log(sharedState);
-    
-    return <><p>hello</p><p>Shared State: {sharedState}</p></>;
 
-    switch (pageKey) {
+    switch (sharedState) {
         case "what_Project":
             content = <>
                 <h1>About the Project</h1>
