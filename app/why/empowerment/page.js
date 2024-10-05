@@ -1,8 +1,11 @@
-import React from 'react'
+import WhyHeader from '@/components/why/WhyHeader'
 
 const Index = () => {
   return (
-    <div>empowerment</div>
+    <>
+      <WhyHeader />
+      <div>empowerment</div>
+    </>
   )
 }
 

@@ -1,8 +1,11 @@
-import React from 'react'
+import WhyHeader from '@/components/why/WhyHeader'
 
 const Index = () => {
   return (
-    <div>Human nature</div>
+    <>
+      <WhyHeader />
+      <div>Human nature</div>
+    </>
   )
 }
 
