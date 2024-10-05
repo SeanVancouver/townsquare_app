@@ -1,6 +1,5 @@
 import "./globals.css";
 import NavigationBar from "@/components/NavigationBar";
-import Header from "@/components/Header";
 import { NavbarProvider } from "@/contexts/AppContext";
 
 export const metadata = {

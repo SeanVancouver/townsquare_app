@@ -10,24 +10,6 @@ const NavigationBar = () => {
   const [activeSection, setActiveSection] = useState('what_Project');
   const router = useRouter();
 
-  // let { sharedState, setSharedState } = useContext(NavbarContext);  
-
-  // switch (activeSection) {
-  //   case 'what':
-  //     break;
-
-  //   case value:
-
-  //     break;
-
-  //   case value:
-
-  //     break;
-
-  //   default:
-  //     break;
-  // }
-
   return (
     <div>
       {/* Buttons to switch between sections */}
