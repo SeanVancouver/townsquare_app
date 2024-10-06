@@ -6,7 +6,7 @@ import ReasonsModal from './ReasonsModal';
 
 const WhyHeader = () => {
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     return (
         <>
