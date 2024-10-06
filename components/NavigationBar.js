@@ -2,7 +2,6 @@
 
 import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/navigation'
-import { NavbarContext } from '@/contexts/AppContext';
 import Link from 'next/link';
 
 const NavigationBar = () => {
