@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import NavigationBar from "@/components/NavigationBar";
 import { NavbarProvider } from "@/contexts/AppContext";
+import NavBar from "@/components/NavBar";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,9 +14,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body>
+      <body className="vsc-initialized max-w-[50rem] m-auto">
         <NavbarProvider>
-          {<NavigationBar />}
+          {<NavBar />}
           {/* {<Header />} */}
           {children}
           {<Footer />}

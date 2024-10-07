@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/navigation'
 
 const INITIAL_LSC = "INITIAL_LSC";
@@ -180,12 +180,12 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
             resetQuestionnaire();
         }}>
             <div className="absolute bg-red-500 w-6/12 h-1/2 -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-[5]" onClick={(e) => { e.stopPropagation() }}>
-                <FontAwesomeIcon icon={faXmark} onClick={() => {
+                {/* <FontAwesomeIcon icon={faXmark} onClick={() => {
                     setIsOpen(false);
                     resetQuestionnaire();
                 }}
                     className="absolute right-0 cursor-pointer"
-                />
+                /> */}
                 {/* <p>I am a modal</p> */}
                 <div className="mt-4">
                     <h3 className="font-medium mb-2">{questionsObj[currentQuestion].question}</h3>
