@@ -11,8 +11,6 @@ const NavBar = () => {
     const pathname = usePathname();
 
     const toggleDropdown = () => {
-        console.log("asdfds");
-
         setIsDropdownOpen(!isDropdownOpen);
     };
 
@@ -22,19 +20,8 @@ const NavBar = () => {
         }
     };
 
-    const handleUrlChange = () => {
-        console.log("vvvvvvvvv??");
-        console.log(window.location.pathname);
-    };
-
     useEffect(() => {
-        console.log('assssssddddd');
-
-        window.addEventListener('popstate', handleUrlChange);
-
         const path = window.location.pathname;
-        console.log("pathpath: " + path);
-        console.log("pathname: " + pathname);
 
         if (path.startsWith('/what')) {
             setActiveLink('/what');
@@ -67,12 +54,10 @@ const NavBar = () => {
             setActiveLink('/what');
         }
 
-        // document.addEventListener('mousedown', handleClickOutside);
         document.addEventListener('click', handleClickOutside);
 
         return () => {
             document.removeEventListener('click', handleClickOutside);
-            window.removeEventListener('popstate', handleUrlChange);
         };
     }, [pathname]);
 

@@ -31,7 +31,7 @@ export default function Home() {
           </ul>
           <p><a href="https://youtu.be/TWWylIMUOBg?si=eiqCtLQEsDrQDHJM" target="_blank" rel="noopener noreferrer"><span className="text-2xl"><strong>Watch demo here, </strong></span></a>to get an idea of how such social platform look like.</p>
 
-          <p>I am 100% convinced of the TownSquare project, and would like to convince you as well. Next, please see why TownSquare matters <Link className="text-2xl" href="/why"><u><strong>here</strong></u></Link>.</p>
+          <p>I am 100% convinced of this movement's potential, and would like to convince you as well. See why TownSquare matters <Link className="text-2xl" href="/why"><u><strong>here</strong></u></Link>.</p>
         </article>
       </div>
     </>
