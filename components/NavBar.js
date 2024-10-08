@@ -4,11 +4,12 @@ import Link from 'next/link';
 
 const NavBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState("");
     const dropdownRef = useRef(null);
 
     const toggleDropdown = () => {
         console.log("asdfds");
-        
+
         setIsDropdownOpen(!isDropdownOpen);
     };
 
@@ -19,19 +20,41 @@ const NavBar = () => {
             }
         };
 
+        const path = window.location.pathname;
+        console.log("pathpath: " + path);
+
+        if (path.startsWith('/why')) {
+            setActiveLink('why');
+        }
+
+        switch (path) {
+            case '/why':
+                setActiveLink('why');
+                break;
+            case '/how':
+                setActiveLink('how');
+                break;
+            case '/who':
+                setActiveLink('who');
+                break;
+            default:
+                setActiveLink('what');
+                break;
+        }
+
         // document.addEventListener('mousedown', handleClickOutside);
         document.addEventListener('click', handleClickOutside);
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('click', handleClickOutside);
         };
     }, []);
 
     return (
         <div style={{ position: 'relative' }}>
             <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-                <Link href="/">What</Link>
+                <Link className={`${activeLink === "what" && 'bg-[aqua]'}`} href="/" onClick={() => setActiveLink("what")}>What</Link>
                 <div style={{ position: 'relative' }} >
-                    <button onClick={toggleDropdown} style={{ cursor: 'pointer' }} ref={dropdownRef}>
+                    <button className={`${activeLink === "why" && 'bg-[aqua]'}`} onClick={toggleDropdown} style={{ cursor: 'pointer' }} ref={dropdownRef}>
                         Why {isDropdownOpen ? '▲' : '▼'}
                     </button>
                     {isDropdownOpen && (
@@ -46,20 +69,20 @@ const NavBar = () => {
                             zIndex: 1000,
                         }}>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                                <Link href="/why">Take quiz</Link>
-                                <Link href="/why/empowerment">Empowerment</Link>
-                                <Link href="/why/bettersocialmedia">Better social media</Link>
-                                <Link href="/why/elites">Elites</Link>
-                                <Link href="/why/capitalism">Capitalism</Link>
-                                <Link href="/why/humannature">Human nature</Link>
+                                <Link onClick={() => setActiveLink("why")} href="/why">Take quiz</Link>
+                                <Link onClick={() => setActiveLink("why")} href="/why/empowerment">Empowerment</Link>
+                                <Link onClick={() => setActiveLink("why")} href="/why/bettersocialmedia">Better social media</Link>
+                                <Link onClick={() => setActiveLink("why")} href="/why/elites">Elites</Link>
+                                <Link onClick={() => setActiveLink("why")} href="/why/capitalism">Capitalism</Link>
+                                <Link onClick={() => setActiveLink("why")} href="/why/humannature">Human nature</Link>
                             </div>
                         </div>
                     )}
                 </div>
-                <Link href="/how">How</Link>
+                <Link className={`${activeLink === "how" && 'bg-[aqua]'}`} href="/how" onClick={() => setActiveLink("how")}>How</Link>
+                <Link className={`${activeLink === "who" && 'bg-[aqua]'}`} href="/who" onClick={() => setActiveLink("who")}>Who</Link>
             </div>
             <img src="https://media.cntraveler.com/photos/5c240136e223c55afc3e4206/16:9/w_2240,c_limit/Vancouver-Art-Gallery_VAG-ARCH-2006-015.jpg" alt="Girl in a jacket" width="500" height="600" />
-
         </div>
     );
 };
