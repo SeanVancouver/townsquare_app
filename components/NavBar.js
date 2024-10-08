@@ -1,11 +1,14 @@
 'use client'
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const NavBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [activeLink, setActiveLink] = useState("");
     const dropdownRef = useRef(null);
+
+    const pathname = usePathname();
 
     const toggleDropdown = () => {
         console.log("asdfds");
@@ -19,14 +22,19 @@ const NavBar = () => {
         }
     };
 
-    console.log("vvvvvvvvv");
-    
+    const handleUrlChange = () => {
+        console.log("vvvvvvvvv??");
+        console.log(window.location.pathname);
+    };
 
     useEffect(() => {
-  
+        console.log('assssssddddd');
+
+        window.addEventListener('popstate', handleUrlChange);
 
         const path = window.location.pathname;
         console.log("pathpath: " + path);
+        console.log("pathname: " + pathname);
 
         if (path.startsWith('/what')) {
             setActiveLink('/what');
@@ -34,19 +42,15 @@ const NavBar = () => {
         else if (path.startsWith('/why/empowerment')) {
             setActiveLink('/why/empowerment');
         }
-
         else if (path.startsWith('/why/bettersocialmedia')) {
             setActiveLink('/why/bettersocialmedia');
         }
-
         else if (path.startsWith('/why/elites')) {
             setActiveLink('/why/elites');
         }
-
         else if (path.startsWith('/why/capitalism')) {
             setActiveLink('/why/capitalism');
         }
-
         else if (path.startsWith('/why/humannature')) {
             setActiveLink('/why/humannature');
         }
@@ -63,27 +67,14 @@ const NavBar = () => {
             setActiveLink('/what');
         }
 
-        // switch (path) {
-        //     case '/why':
-        //         setActiveLink('why');
-        //         break;
-        //     case '/how':
-        //         setActiveLink('how');
-        //         break;
-        //     case '/who':
-        //         setActiveLink('who');
-        //         break;
-        //     default:
-        //         setActiveLink('what');
-        //         break;
-        // }
-
         // document.addEventListener('mousedown', handleClickOutside);
         document.addEventListener('click', handleClickOutside);
+
         return () => {
             document.removeEventListener('click', handleClickOutside);
+            window.removeEventListener('popstate', handleUrlChange);
         };
-    }, []);
+    }, [pathname]);
 
     return (
         <div style={{ position: 'relative' }}>
