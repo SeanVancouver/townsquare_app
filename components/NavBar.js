@@ -19,6 +19,9 @@ const NavBar = () => {
         }
     };
 
+    console.log("vvvvvvvvv");
+    
+
     useEffect(() => {
   
 
@@ -84,7 +87,7 @@ const NavBar = () => {
 
     return (
         <div style={{ position: 'relative' }}>
-            <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+            <div style={{ position: 'fixed', top: 0, display: "flex", gap: "20px", alignItems: "center" }} className='bg-[blanchedalmond]'>
                 <Link className={`${activeLink === "/what" && 'bg-[aqua]'}`} href="/" onClick={() => setActiveLink("/what")}>What</Link>
                 <div style={{ position: 'relative' }} >
                     <button className={`${activeLink.startsWith("/why") && 'bg-[aqua]'}`} onClick={toggleDropdown} style={{ cursor: 'pointer' }} ref={dropdownRef}>
@@ -115,7 +118,7 @@ const NavBar = () => {
                 <Link className={`${activeLink === "/how" && 'bg-[aqua]'}`} href="/how" onClick={() => setActiveLink("/how")}>How</Link>
                 <Link className={`${activeLink === "/who" && 'bg-[aqua]'}`} href="/who" onClick={() => setActiveLink("/who")}>Who</Link>
             </div>
-            <img src="https://media.cntraveler.com/photos/5c240136e223c55afc3e4206/16:9/w_2240,c_limit/Vancouver-Art-Gallery_VAG-ARCH-2006-015.jpg" alt="Girl in a jacket" width="500" height="600" />
+            <img src="https://media.cntraveler.com/photos/5c240136e223c55afc3e4206/16:9/w_2240,c_limit/Vancouver-Art-Gallery_VAG-ARCH-2006-015.jpg" alt="Girl in a jacket" width="500" height="600" className="mt-16" />
         </div>
     );
 };
