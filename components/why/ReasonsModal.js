@@ -77,6 +77,7 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
     }
 
     const [currentQuestion, setCurrentQuestion] = useState(INITIAL_LSC);
+    const [currentAnswer, setCurrentAnswer] = useState("");
     const [answers, setAnswers] = useState(Array(questions.length).fill(null));
     const [answerArray, setAnswerArray] = useState([]);
     const [hasAnswered, setHasAnswered] = useState(false);
@@ -89,9 +90,8 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
 
     const handleAnswer = (option) => {
         setHasAnswered(true);
+        setCurrentAnswer(option.value);
 
-        console.log("ccccc");
-        console.log(option);
         let tempUpdateArray = answerArray;
 
         if (currentQuestion === INITIAL_LSC) {
@@ -106,6 +106,12 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
 
     };
 
+    const clearForm = () => {
+        setIsOpen(false);
+        resetQuestionnaire();
+        setCurrentAnswer("");
+    }
+
     const handleNext = () => {
         setHasAnswered(false);
         if (currentQuestion === INITIAL_LSC) {
@@ -117,8 +123,7 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
             }
             // setCurrentQuestion(currentQuestion + 1);
         } else {
-            setIsOpen(false);
-            resetQuestionnaire();
+
             onComplete();
         }
     };
@@ -158,19 +163,26 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
     return (
         <div className="fixed inset-0 bg-blue-500 w-full h-full z-[2]" onClick={(e) => {
             e.stopPropagation();
-            setIsOpen(false);
-            resetQuestionnaire();
+            clearForm();
+            // setIsOpen(false);
+            // resetQuestionnaire();
         }}>
             <div className="absolute bg-red-500 w-6/12 h-1/2 -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-[5]" onClick={(e) => { e.stopPropagation() }}>
-                <div className="mt-4">
+                <p className='absolute top-0 right-0 cursor-pointer underline' onClick={() => {
+                    clearForm();
+                    // setIsOpen(false);
+                    // resetQuestionnaire();
+                }}>Close</p>
+                <div className="mt-14">
                     <h3 className="font-medium mb-2">{questionsObj[currentQuestion].question}</h3>
                     <div className="space-y-2">
                         {questionsObj[currentQuestion].options.map((option, index) => (
                             <button
                                 key={index}
-                                variant={answers[currentQuestion] === option ? "default" : "outline"}
-                                className="w-full justify-start"
+                                // variant={answers[currentQuestion] === option ? "default" : "outline"}
+                                variant={"default"}
                                 onClick={() => handleAnswer(option)}
+                                className={`w-full justify-start ${option.value === currentAnswer && 'bg-[aqua]'}`}
                             >
                                 {option.display}
                             </button>
