@@ -1,8 +1,6 @@
 'use client'
 
-import { useState } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { useState , useEffect} from 'react';
 import { useRouter } from 'next/navigation'
 
 const INITIAL_LSC = "INITIAL_LSC";
@@ -10,11 +8,20 @@ const SECOND_SOCIAL = "SECOND_SOCIAL";
 const SECOND_CULPRIT = "SECOND_CULPRIT";
 
 const ReasonsModal = ({ isOpen, setIsOpen }) => {
-    // if(isOpen) {
-    //     return <div>ReasonsModal</div> 
-    // }
-    // return <div>closed</div>;
+ 
     const router = useRouter();
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = ''; 
+        }
+
+        return () => {
+            document.body.style.overflow = ''; 
+        };
+    }, [isOpen]);
 
     const questions = [
         {
@@ -95,10 +102,6 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
             tempUpdateArray[1] = option.value;
         }
 
-        // newAnswers[currentQuestion] = answer;
-        // setAnswers(newAnswers);
-
-        // setAnswerArray([...answerArray, answer.value]);
         setAnswerArray(tempUpdateArray);
 
     };
@@ -147,49 +150,20 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
         }
     }
 
-    // const handleNext = () => {
-    //     if (currentQuestion < questions.length - 1) {
-    //         console.log("111111");
-    //         setCurrentQuestion(currentQuestion + 1);
-    //     } else {
-    //         console.log("222222");
-    //         setIsOpen(false);
-    //         resetQuestionnaire();
-    //         console.log(answers);
-    //         // onComplete(answers);
-    //     }
-    // };
-
-    // let hasAnswered = false;
-
-    // if(currentQuestion === INITIAL_LSC) {
-    //     hasAnswered = answerArray[0] ? true : false;
-    // }
-    // else {
-    //     hasAnswered = answerArray[1] ? true : false;
-    // }
 
     if (!isOpen) {
         return null;
     }
 
     return (
-        <div className="absolute bg-blue-500 w-full h-full z-[2] top-0" onClick={(e) => {
+        <div className="fixed inset-0 bg-blue-500 w-full h-full z-[2]" onClick={(e) => {
             e.stopPropagation();
             setIsOpen(false);
             resetQuestionnaire();
         }}>
             <div className="absolute bg-red-500 w-6/12 h-1/2 -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-[5]" onClick={(e) => { e.stopPropagation() }}>
-                {/* <FontAwesomeIcon icon={faXmark} onClick={() => {
-                    setIsOpen(false);
-                    resetQuestionnaire();
-                }}
-                    className="absolute right-0 cursor-pointer"
-                /> */}
-                {/* <p>I am a modal</p> */}
                 <div className="mt-4">
                     <h3 className="font-medium mb-2">{questionsObj[currentQuestion].question}</h3>
-                    {/* <h3 className="font-medium mb-2">{questions[currentQuestion].question}</h3> */}
                     <div className="space-y-2">
                         {questionsObj[currentQuestion].options.map((option, index) => (
                             <button
@@ -202,18 +176,6 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
                             </button>
                         ))}
                     </div>
-                    {/* <div className="space-y-2">
-                        {questions[currentQuestion].options.map((option, index) => (
-                            <button
-                                key={index}
-                                variant={answers[currentQuestion] === option ? "default" : "outline"}
-                                className="w-full justify-start"
-                                onClick={() => handleAnswer(option)}
-                            >
-                                {option}
-                            </button>
-                        ))}
-                    </div> */}
                 </div>
                 <button
                     onClick={handleNext}
@@ -224,7 +186,6 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
                 </button>
             </div>
         </div>
-
     );
 }
 

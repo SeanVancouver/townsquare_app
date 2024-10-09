@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react';
-// import WhyHeader from '@/components/why/WhyHeader'
 import ReasonsModal from '@/components/why/ReasonsModal';
 import Link from 'next/link';
 
