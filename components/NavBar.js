@@ -82,11 +82,11 @@ const NavBar = () => {
                         }}>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 <Link className={`${activeLink === "/why" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why")} href="/why">Take quiz</Link>
-                                <Link className={`${activeLink === "/why/empowerment" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/empowerment")} href="/why/empowerment">Empowerment</Link>
-                                <Link className={`${activeLink === "/why/bettersocialmedia" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/bettersocialmedia")} href="/why/bettersocialmedia">Better social media</Link>
-                                <Link className={`${activeLink === "/why/elites" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/elites")} href="/why/elites">Elites</Link>
-                                <Link className={`${activeLink === "/why/capitalism" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/capitalism")} href="/why/capitalism">Capitalism</Link>
-                                <Link className={`${activeLink === "/why/humannature" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/humannature")} href="/why/humannature">Human nature</Link>
+                                <Link className={`${activeLink === "/why/empowerment" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/empowerment")} href="/why/empowerment">1. Empowerment</Link>
+                                <Link className={`${activeLink === "/why/bettersocialmedia" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/bettersocialmedia")} href="/why/bettersocialmedia">2. Better social media</Link>
+                                <Link className={`${activeLink === "/why/capitalism" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/capitalism")} href="/why/capitalism">3. Capitalism</Link>
+                                <Link className={`${activeLink === "/why/elites" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/elites")} href="/why/elites">4. Elites</Link>
+                                <Link className={`${activeLink === "/why/humannature" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/humannature")} href="/why/humannature">5. Human nature</Link>
                             </div>
                         </div>
                     )}

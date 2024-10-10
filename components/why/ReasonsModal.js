@@ -78,17 +78,12 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
 
     const [currentQuestion, setCurrentQuestion] = useState(INITIAL_LSC);
     const [currentAnswer, setCurrentAnswer] = useState("");
-    const [answers, setAnswers] = useState(Array(questions.length).fill(null));
     const [answerArray, setAnswerArray] = useState([]);
     const [hasAnswered, setHasAnswered] = useState(false);
+    const [finalText, setFinalText] = useState("");
 
 
-    const resetQuestionnaire = () => {
-        setCurrentQuestion(INITIAL_LSC);
-        setAnswers(Array(questions.length).fill(null));
-    };
-
-    const handleAnswer = (option) => {
+    const handleAnswerSelect = (option) => {
         setHasAnswered(true);
         setCurrentAnswer(option.value);
 
@@ -100,6 +95,21 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
 
         else {
             tempUpdateArray[1] = option.value;
+            if (option.value === "secondSocialYes") {
+                setFinalText("secondSocialYes");
+            }
+            if (option.value === "secondSocialNo") {
+                setFinalText("secondSocialNo");
+            }
+            if (option.value === "secondCulpritElites") {
+                setFinalText("secondCulpritElites");
+            }
+            if (option.value === "secondCulpritCapitalism") {
+                setFinalText("secondCulpritCapitalism");
+            }
+            if (option.value === "secondCulpritHumanNature") {
+                setFinalText("secondCulpritHumanNature");
+            }
         }
 
         setAnswerArray(tempUpdateArray);
@@ -108,8 +118,10 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
 
     const clearForm = () => {
         setIsOpen(false);
-        resetQuestionnaire();
         setCurrentAnswer("");
+        setCurrentQuestion(INITIAL_LSC);
+        setFinalText("");
+        setHasAnswered(false);
     }
 
     const handleNext = () => {
@@ -123,7 +135,6 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
             }
             // setCurrentQuestion(currentQuestion + 1);
         } else {
-
             onComplete();
         }
     };
@@ -165,13 +176,11 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
             e.stopPropagation();
             clearForm();
             // setIsOpen(false);
-            // resetQuestionnaire();
         }}>
             <div className="absolute bg-red-500 w-6/12 h-1/2 -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-[5]" onClick={(e) => { e.stopPropagation() }}>
                 <p className='absolute top-0 right-0 cursor-pointer underline' onClick={() => {
                     clearForm();
                     // setIsOpen(false);
-                    // resetQuestionnaire();
                 }}>Close</p>
                 <div className="mt-14">
                     <h3 className="font-medium mb-2">{questionsObj[currentQuestion].question}</h3>
@@ -181,7 +190,7 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
                                 key={index}
                                 // variant={answers[currentQuestion] === option ? "default" : "outline"}
                                 variant={"default"}
-                                onClick={() => handleAnswer(option)}
+                                onClick={() => handleAnswerSelect(option)}
                                 className={`w-full justify-start ${option.value === currentAnswer && 'bg-[aqua]'}`}
                             >
                                 {option.display}
@@ -189,6 +198,7 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
                         ))}
                     </div>
                 </div>
+                {finalText && <p>{finalText}</p>}
                 <button
                     onClick={handleNext}
                     disabled={!hasAnswered}
