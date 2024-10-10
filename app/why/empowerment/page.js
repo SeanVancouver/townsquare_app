@@ -1,4 +1,3 @@
-import WhyHeader from '@/components/why/WhyHeader'
 import Link from 'next/link';
 
 const Index = () => {
