@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import AudioPlayer from '@/components/AudioPlayer';
 
 const Index = () => {
   return (
     <>
-      {/* <WhyHeader /> */}
+      <AudioPlayer />
       <div>
         <p>Would you like to have superpower? Not like flying or anything, but a power that, when yield properly, can bring you more of whatever you wanted, whether money, fame, friends, or else.</p>
         <p>What TownSquare can offer you, is the ability to instantly reach the entire population of your city. Instead of interacting on the usual person to person basis, you can now broadcast to the entire city, and hear the city echo back to you.</p>
