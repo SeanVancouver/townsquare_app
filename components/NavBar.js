@@ -86,7 +86,7 @@ const NavBar = () => {
                                 <Link className={`${activeLink === "/why/bettersocialmedia" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/bettersocialmedia")} href="/why/bettersocialmedia">2. Better social media</Link>
                                 <Link className={`${activeLink === "/why/capitalism" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/capitalism")} href="/why/capitalism">3. Capitalism</Link>
                                 <Link className={`${activeLink === "/why/elites" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/elites")} href="/why/elites">4. Elites</Link>
-                                <Link className={`${activeLink === "/why/humannature" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/humannature")} href="/why/humannature">5. Human nature</Link>
+                                <Link className={`${activeLink === "/why/humannature" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/humannature")} href="/why/people">5. People</Link>
                             </div>
                         </div>
                     )}

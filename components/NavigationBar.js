@@ -41,7 +41,7 @@ const NavigationBar = () => {
             <Link href="/why/bettersocialmedia">Better social media</Link><p>&nbsp;|&nbsp;</p>
             <Link href="/why/elites">Elites</Link><p>&nbsp;|&nbsp;</p>
             <Link href="/why/capitalism">Capitalism</Link><p>&nbsp;|&nbsp;</p>
-            <Link href="/why/humannature">Human nature</Link>
+            <Link href="/why/people">people</Link>
           </div>
         )}
         {activeSection === 'how_timeline' && (
