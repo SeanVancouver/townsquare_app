@@ -19,7 +19,7 @@ export default function Home() {
 
         <article>
           <h2>TownSquare project:</h2>
-          <p>The TownSquare project is a social media platform fully dedicated to the needs and desires of a city. It allows its inhabitants to find, communicate and organize together. Just like how cities have physical infrastructure like roads and buses to facilitate the flow of goods, they should also have a virtual infrastructure to facilitate the flow of information.</p>
+          <p>The TownSquare project is an open sourced social media platform fully dedicated to the needs and desires of a city. It allows its inhabitants to find, communicate and organize together. Just like how cities have physical infrastructure like roads and buses to facilitate the flow of goods, they should also have a virtual infrastructure to facilitate the flow of information.</p>
           <p>By focusing on a city instead of a vast undefined geographical area, TownSquare allows:</p>
           <ul>
             <li><strong>More feature to the user</strong>: It can focus on empowering the user by giving them unprecedented features and reach, such as:<ol>
