@@ -17,17 +17,38 @@ export default function Home() {
         <p><br /></p>
         <p>&nbsp; &nbsp; To mitigate this time constraint, the awareness must not just be spread, but sustained.</p>
         <p><br /></p>
-        <p>&nbsp; &nbsp; And this is why we must also form a community of members who support each other with friendship and fraternity. So any new member gained will not leave, and the group keeps growing as everyone struggle towards the same goal.</p>
+        <p>&nbsp; &nbsp; And this is why we must also form a community of members who support each other with friendship and fraternity. So any new member gained will not leave, and the group keeps growing as everyone struggle towards the same goal.&nbsp;</p>
+        <p><br /></p>
+        <p>&nbsp; &nbsp; Additionally, this step should be an ongoing effort even throughout the following steps.</p>
         <p><br /></p>
         <p><br /></p>
-        <p>Step 2 - Start a political party</p>
+        <p>Step 2 - Funding&nbsp;</p>
+        <p><br /></p>
+        <p>&nbsp; &nbsp; Once the group is large enough, we will allow donations to help fund the movement. I myself believe that my full time dedication is crucial to its success, but I cannot do so indefinitely without funding.</p>
+        <p>&nbsp; &nbsp; Depending on how much we are funded and based on the group discussion, we may also bring more people onboard full time or pay members for their time and service.&nbsp;</p>
         <p>&nbsp; &nbsp;&nbsp;</p>
-        <p>&nbsp; &nbsp; It would likely be a municipal party(or provincial/state level if needed), that can use the city&apos;s budget to accomplish the TownSquare project.&nbsp;</p>
         <p><br /></p>
-        <p>&nbsp; &nbsp; Of course we would have to be elected, and justify the value of TownSquare to the voters. It shouldn&apos;t be too hard if we explain it in terms of fixing wealth inequality, which is responsible for rising cost of living, homelessness, crime, unemployment, etc. Our cities spends hundreds of millions annually addressing these issues, yet TownSquare as a digital platform will cost a tiny fraction of it to run.</p>
+        <p>Step 3 - Create a demo app&nbsp;</p>
+        <p><br /></p>
+        <p>&nbsp; &nbsp; As much as we can beautifully describe TownSquare, nothing beats having a demo app you can play with. This will help demonstrate the idea, especially when it comes to the next steps.</p>
         <p><br /></p>
         <p><br /></p>
-        <p>Step 3 - And beyond&nbsp;</p>
+        <p>Step 4a - Push/lobby for TownSquare</p>
+        <p><br /></p>
+        <p>&nbsp; &nbsp; With the demo app ready, we present it simultaneously to the populace and the government, in hopes of convincing the latter to undertake the TownSquare project for the greater good.</p>
+        <p><br /></p>
+        <p>&nbsp; &nbsp; It shouldn&apos;t be too hard if we explain it in terms of fixing wealth inequality, which is responsible for rising cost of living, homelessness, crime, unemployment, etc. Our cities spends hundreds of millions annually addressing these issues, yet TownSquare as a digital platform will cost a tiny fraction of it to run.</p>
+        <p><br /></p>
+        <p><br /></p>
+        <p><br /></p>
+        <p>Step 4b - Start a political party</p>
+        <p><br /></p>
+        <p>&nbsp; &nbsp; If the previous plan failed, then we go with plan B of forming a municipal party(or provincial/state level if needed) ourselves.</p>
+        <p><br /></p>
+        <p>&nbsp; &nbsp; This has the dual benefit of further spreading the movement during the campaigning process, and have full power to undertake the TownSquare project if elected.</p>
+        <p><br /></p>
+        <p><br /></p>
+        <p>Step 5 - And beyond&nbsp;</p>
         <p><br /></p>
         <p>&nbsp; &nbsp; Once the city becomes the first in the world to have its virtual twin or digital infrastructure.</p>
         <p><br /></p>
