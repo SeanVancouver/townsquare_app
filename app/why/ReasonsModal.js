@@ -154,10 +154,6 @@ const ReasonsModal = ({isOpen, setIsOpen}) => {
     }
 
 
-    if (!isOpen) {
-        return null;
-    }
-
     return (
         <BaseModal isOpen={isOpen} clearForm={clearForm}>
             <div className="mt-14">

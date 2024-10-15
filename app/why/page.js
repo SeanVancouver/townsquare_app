@@ -21,10 +21,10 @@ const Index = () => {
           <li><Link href="/why/bettersocialmedia">Better social media</Link></li>
           <li><Link href="/why/capitalism">Capitalism</Link></li>
           <li><Link href="/why/elites">Elites</Link></li>
-          <li><Link href="/why/humannature">People</Link></li>
+          <li><Link href="/why/people">People</Link></li>
         </ol>
       </article>
-      <ReasonsModal  isOpen={isOpen} setIsOpen={setIsOpen} />
+      <ReasonsModal isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
 
   )

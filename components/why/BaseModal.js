@@ -30,7 +30,9 @@ const BaseModal = ({ isOpen, clearForm, children }) => {
                 <p className='absolute top-0 right-0 cursor-pointer underline' onClick={() => {
                     clearForm();
                 }}>Close</p>
-                {children}
+                <div className='overflow-y-scroll h-full'>
+                    {children}
+                </div>
             </div>
         </div>
     );

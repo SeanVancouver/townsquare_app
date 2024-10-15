@@ -1,6 +1,13 @@
+'use client'
+
+import JoinModal from '@/components/JoinModal';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const Index = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div>
@@ -28,9 +35,12 @@ const Index = () => {
         <p><br /></p>
         <p>I eventually quit my finance job and oriented towards IT to make it happen, learning how to code while holding menial jobs. The progress has been slow, but today after 10 years, I finally acquired enough knowledge and saving to quit my job, and devote myself 100% to the TownSquare project.</p>
         <p><br /></p>
-        <p>My dedication and confidence have never wavered in this journey, but I cannot accomplish it alone, and need good people to join the movement. If this sounds like you, please take part here.</p>
+        <p>My dedication and confidence have never wavered in this journey, but I cannot accomplish it alone, and need good people to join the movement. If this sounds like you, please take <span className="text-2xl cursor-pointer underline" onClick={() => {
+          setIsOpen(true);
+        }}>part here.</span></p>
         <p><br /></p>
       </div>
+      <JoinModal isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   )
 }
