@@ -2,12 +2,13 @@
 
 import { useState , useEffect} from 'react';
 import { useRouter } from 'next/navigation'
+import BaseModal from '@/components/why/BaseModal'
 
 const INITIAL_LSC = "INITIAL_LSC";
 const SECOND_SOCIAL = "SECOND_SOCIAL";
 const SECOND_CULPRIT = "SECOND_CULPRIT";
 
-const ReasonsModal = ({ isOpen, setIsOpen }) => {
+const ReasonsModal = ({isOpen, setIsOpen}) => {
  
     const router = useRouter();
 
@@ -23,20 +24,6 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
         };
     }, [isOpen]);
 
-    const questions = [
-        {
-            question: "What's your favorite color?",
-            options: ["Red", "Blue", "Green", "Yellow"]
-        },
-        {
-            question: "How often do you exercise?",
-            options: ["Daily", "Weekly", "Monthly", "Rarely"]
-        },
-        {
-            question: "What's your preferred programming language?",
-            options: ["JavaScript", "Python", "Java", "C++"]
-        }
-    ];
 
     const questionsObj = {
         INITIAL_LSC: {
@@ -172,42 +159,32 @@ const ReasonsModal = ({ isOpen, setIsOpen }) => {
     }
 
     return (
-        <div className="fixed inset-0 bg-blue-500 w-full h-full z-[2]" onClick={(e) => {
-            e.stopPropagation();
-            clearForm();
-            // setIsOpen(false);
-        }}>
-            <div className="absolute bg-red-500 w-6/12 h-1/2 -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-[5]" onClick={(e) => { e.stopPropagation() }}>
-                <p className='absolute top-0 right-0 cursor-pointer underline' onClick={() => {
-                    clearForm();
-                    // setIsOpen(false);
-                }}>Close</p>
-                <div className="mt-14">
-                    <h3 className="font-medium mb-2">{questionsObj[currentQuestion].question}</h3>
-                    <div className="space-y-2">
-                        {questionsObj[currentQuestion].options.map((option, index) => (
-                            <button
-                                key={index}
-                                // variant={answers[currentQuestion] === option ? "default" : "outline"}
-                                variant={"default"}
-                                onClick={() => handleAnswerSelect(option)}
-                                className={`w-full justify-start ${option.value === currentAnswer && 'bg-[aqua]'}`}
-                            >
-                                {option.display}
-                            </button>
-                        ))}
-                    </div>
+        <BaseModal isOpen={isOpen} clearForm={clearForm}>
+            <div className="mt-14">
+                <h3 className="font-medium mb-2">{questionsObj[currentQuestion].question}</h3>
+                <div className="space-y-2">
+                    {questionsObj[currentQuestion].options.map((option, index) => (
+                        <button
+                            key={index}
+                            // variant={answers[currentQuestion] === option ? "default" : "outline"}
+                            variant={"default"}
+                            onClick={() => handleAnswerSelect(option)}
+                            className={`w-full justify-start ${option.value === currentAnswer && 'bg-[aqua]'}`}
+                        >
+                            {option.display}
+                        </button>
+                    ))}
                 </div>
-                {finalText && <p>{finalText}</p>}
-                <button
-                    onClick={handleNext}
-                    disabled={!hasAnswered}
-                    className={`mt-4 w-full ${hasAnswered && "text-[blue]"}`}
-                >
-                    {currentQuestion === INITIAL_LSC ? "Next" : "Finish"}
-                </button>
             </div>
-        </div>
+            {finalText && <p>{finalText}</p>}
+            <button
+                onClick={handleNext}
+                disabled={!hasAnswered}
+                className={`mt-4 w-full ${hasAnswered && "text-[blue]"}`}
+            >
+                {currentQuestion === INITIAL_LSC ? "Next" : "Finish"}
+            </button>
+        </BaseModal>
     );
 }
 

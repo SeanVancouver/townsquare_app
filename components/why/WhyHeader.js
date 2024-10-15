@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Header from "@/components/Header";
-import ReasonsModal from './ReasonsModal';
+import BaseModal from './BaseModal';
 
 const WhyHeader = () => {
 
@@ -17,7 +17,7 @@ const WhyHeader = () => {
                 }}>these questions</span></h2>
             </Header>
 
-            <ReasonsModal isOpen={isOpen} setIsOpen={setIsOpen} />
+            <BaseModal isOpen={isOpen} setIsOpen={setIsOpen} />
         </>
 
     )

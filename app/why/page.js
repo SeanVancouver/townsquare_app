@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react';
-import ReasonsModal from '@/components/why/ReasonsModal';
 import Link from 'next/link';
+import ReasonsModal from './ReasonsModal';
+import { useRouter } from 'next/navigation'
 
 const Index = () => {
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -22,7 +24,7 @@ const Index = () => {
           <li><Link href="/why/humannature">People</Link></li>
         </ol>
       </article>
-      <ReasonsModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <ReasonsModal  isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
 
   )

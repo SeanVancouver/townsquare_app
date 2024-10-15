@@ -26,7 +26,7 @@ const Index = () => {
         <p><br /></p>
         <p>I pondered long and hard about human nature, and the point of life. We cannot simply convince people to be good nature, but we can create the environment conducive to it. That&apos;s when the idea of TownSquare emerged.&nbsp;</p>
         <p><br /></p>
-        <p>I eventually quit my finance job and oriented towards IT to make it happen, learning how to code while holding menial jobs. The progress has been slow, but today after 10 years, I am finally able to launch the TownSquare movement.</p>
+        <p>I eventually quit my finance job and oriented towards IT to make it happen, learning how to code while holding menial jobs. The progress has been slow, but today after 10 years, I finally acquired enough knowledge and saving to quit my job, and devote myself 100% to the TownSquare project.</p>
         <p><br /></p>
         <p>My dedication and confidence have never wavered in this journey, but I cannot accomplish it alone, and need good people to join the movement. If this sounds like you, please take part here.</p>
         <p><br /></p>
