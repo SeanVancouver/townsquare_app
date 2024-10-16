@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import JoinModal from './JoinModal';
+import Link from 'next/link';
 
 const Footer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,15 +34,16 @@ const Footer = () => {
 
   return (
     <>
-      <div className='flex w-full'>
-        <div className='flex-1'>
+      <div>
+        <div id="ck_embed" className='flex-1'></div>
+        <div className='flex'>
           <p>Contact email: <span>someone@townsquare.com</span></p>
           <p>Youtube channel: <span>whatever URL</span></p>
-          <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY">
-          </iframe>
+          <div>
+            <Link href="/join">Join us</Link>
+          </div>
         </div>
-        <div id="ck_embed" className='flex-1'></div>
+
       </div>
 
 
