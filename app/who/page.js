@@ -1,7 +1,6 @@
 'use client'
 
 import JoinModal from '@/components/JoinModal';
-import Link from 'next/link';
 import { useState } from 'react';
 
 const Index = () => {

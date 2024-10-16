@@ -22,7 +22,7 @@ const BaseModal = ({ isOpen, clearForm, children }) => {
     }
 
     return (
-        <div className="fixed inset-0 bg-blue-500 w-full h-full z-[2]" onClick={(e) => {
+        <div className="fixed inset-0 bg-blue-500 w-full h-full z-[20]" onClick={(e) => {
             e.stopPropagation();
             clearForm();
         }}>

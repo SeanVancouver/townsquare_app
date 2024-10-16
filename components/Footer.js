@@ -35,8 +35,8 @@ const Footer = () => {
     <>
       <div className='flex w-full'>
         <div className='flex-1'>
-          <p>Email: <span>someone@townsquare.com</span></p>
-          <p>Youtube: <span>whatever URL</span></p>
+          <p>Contact email: <span>someone@townsquare.com</span></p>
+          <p>Youtube channel: <span>whatever URL</span></p>
           <iframe width="420" height="315"
             src="https://www.youtube.com/embed/tgbNymZ7vqY">
           </iframe>

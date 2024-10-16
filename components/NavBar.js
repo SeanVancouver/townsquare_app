@@ -50,6 +50,9 @@ const NavBar = () => {
         else if (path.startsWith('/who')) {
             setActiveLink('/who');
         }
+        else if (path.startsWith('/join')) {
+            setActiveLink('/join');
+        }
         else {
             setActiveLink('/what');
         }
@@ -94,6 +97,7 @@ const NavBar = () => {
                 </div>
                 <Link className={`${activeLink !== "/how" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/how" onClick={() => setActiveLink("/how")}>How</Link>
                 <Link className={`${activeLink !== "/who" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/who" onClick={() => setActiveLink("/who")}>Who</Link>
+                <Link className={`${activeLink !== "/join" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/join" onClick={() => setActiveLink("/who")}>Join</Link>
             </div>
             <img src="https://media.cntraveler.com/photos/5c240136e223c55afc3e4206/16:9/w_2240,c_limit/Vancouver-Art-Gallery_VAG-ARCH-2006-015.jpg" alt="Girl in a jacket" width="500" height="600" />
 
