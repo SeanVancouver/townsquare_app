@@ -33,11 +33,19 @@ const Footer = () => {
 
   return (
     <>
-      <h2>Subscribe to our Newsletter</h2>
-      <div id="ck_embed"></div> {/* Form will be injected here */}
-      <h3>ending</h3>
+      <div className='flex w-full'>
+        <div className='flex-1'>
+          <p>Email: <span>someone@townsquare.com</span></p>
+          <p>Youtube: <span>whatever URL</span></p>
+          <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+          </iframe>
+        </div>
+        <div id="ck_embed" className='flex-1'></div>
+      </div>
 
-      <div className='flex'>
+
+      {/* <div className='flex'>
         <img src="/assets/uncle-sam-29972_640.png" />
         <div>
           <p>Do you have what it takes? We need good and driven people to help make TownSquare happen.</p>
@@ -45,8 +53,8 @@ const Footer = () => {
             setIsOpen(true);
           }}>JOIN US</button>
         </div>
-      </div>
-      <JoinModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      </div> */}
+      {/* <JoinModal isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </>
   );
 }
