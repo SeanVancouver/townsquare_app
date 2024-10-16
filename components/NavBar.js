@@ -63,12 +63,12 @@ const NavBar = () => {
 
     return (
         <>
-            <div style={{ position: 'sticky', top: 0, display: "flex", gap: "20px", alignItems: "center" }} className='bg-[white]'>
-                <Link className={`${activeLink === "/what" && 'bg-[aqua]'}`} href="/" onClick={() => setActiveLink("/what")}>What</Link>
+            <div style={{ position: 'sticky', top: 0, display: "flex", gap: "20px", alignItems: "center", justifyContent: 'space-evenly', height: '4rem', zIndex: 10}} className='bg-[white]'>
+                <Link className={`${activeLink !== "/what" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/" onClick={() => setActiveLink("/what")}>What</Link>
                 <div style={{ position: 'relative' }} >
-                    <button className={`${activeLink.startsWith("/why") && 'bg-[aqua]'}`} onClick={toggleDropdown} style={{ cursor: 'pointer' }} ref={dropdownRef}>
+                    <span className={`${activeLink.startsWith("/why") && 'underline'} underline-offset-8 text-[1.6rem]`} onClick={toggleDropdown} style={{ cursor: 'pointer' }} ref={dropdownRef}>
                         Why {isDropdownOpen ? '▲' : '▼'}
-                    </button>
+                    </span>
                     {isDropdownOpen && (
                         <div style={{
                             position: 'absolute',
@@ -78,23 +78,24 @@ const NavBar = () => {
                             border: '1px solid #ccc',
                             borderRadius: '4px',
                             padding: '10px',
-                            zIndex: 1000,
+                            zIndex: 10,
+                            width: 'max-content'
                         }}>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                                <Link className={`${activeLink === "/why" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why")} href="/why">Take quiz</Link>
-                                <Link className={`${activeLink === "/why/empowerment" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/empowerment")} href="/why/empowerment">1. Empowerment</Link>
-                                <Link className={`${activeLink === "/why/socialmedia" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/socialmedia")} href="/why/socialmedia">2. Better social media</Link>
-                                <Link className={`${activeLink === "/why/capitalism" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/capitalism")} href="/why/capitalism">3. Capitalism</Link>
-                                <Link className={`${activeLink === "/why/elites" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/elites")} href="/why/elites">4. Elites</Link>
-                                <Link className={`${activeLink === "/why/humannature" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/humannature")} href="/why/people">5. People</Link>
+                                <Link className={`${activeLink !== "/why" && 'no-underline'} underline-offset-4`} onClick={() => setActiveLink("/why")} href="/why">Take quiz</Link>
+                                <Link className={`${activeLink !== "/why/empowerment" && 'no-underline'} underline-offset-4`} onClick={() => setActiveLink("/why/empowerment")} href="/why/empowerment">1. Empowerment</Link>
+                                <Link className={`${activeLink !== "/why/socialmedia" && 'no-underline'} underline-offset-4`} onClick={() => setActiveLink("/why/socialmedia")} href="/why/socialmedia">2. Better social media</Link>
+                                <Link className={`${activeLink !== "/why/capitalism" && 'no-underline'} underline-offset-4`} onClick={() => setActiveLink("/why/capitalism")} href="/why/capitalism">3. Capitalism</Link>
+                                <Link className={`${activeLink !== "/why/elites" && 'no-underline'} underline-offset-4`} onClick={() => setActiveLink("/why/elites")} href="/why/elites">4. Elites</Link>
+                                <Link className={`${activeLink !== "/why/humannature" && 'no-underline'} underline-offset-4`} onClick={() => setActiveLink("/why/humannature")} href="/why/people">5. People</Link>
                             </div>
                         </div>
                     )}
                 </div>
-                <Link className={`${activeLink === "/how" && 'bg-[aqua]'}`} href="/how" onClick={() => setActiveLink("/how")}>How</Link>
-                <Link className={`${activeLink === "/who" && 'bg-[aqua]'}`} href="/who" onClick={() => setActiveLink("/who")}>Who</Link>
+                <Link className={`${activeLink !== "/how" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/how" onClick={() => setActiveLink("/how")}>How</Link>
+                <Link className={`${activeLink !== "/who" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/who" onClick={() => setActiveLink("/who")}>Who</Link>
             </div>
-            <img src="https://media.cntraveler.com/photos/5c240136e223c55afc3e4206/16:9/w_2240,c_limit/Vancouver-Art-Gallery_VAG-ARCH-2006-015.jpg" alt="Girl in a jacket" width="500" height="600" className="mt-16" />
+            <img src="https://media.cntraveler.com/photos/5c240136e223c55afc3e4206/16:9/w_2240,c_limit/Vancouver-Art-Gallery_VAG-ARCH-2006-015.jpg" alt="Girl in a jacket" width="500" height="600" />
 
         </>
 

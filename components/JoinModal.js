@@ -37,10 +37,11 @@ const JoinModal = ({ isOpen, setIsOpen }) => {
                     <p>&nbsp; &nbsp; &nbsp; &nbsp; If you are interested because you like to fight wealth inequality or the elites, know that this group is NOT looking to have discussion on what the solution is, for it has already been decided to be TownSquare. Accept this or otherwise there are certainly more open ended groups for you to join.</p>
                     <p><br /></p>
                     <p>&nbsp; &nbsp; 2. We are action based&nbsp;</p>
-                    <p>&nbsp; &nbsp; &nbsp; &nbsp; This group is for those who are ready for action, not those who like to argue for the sake of arguing. The foreseeable objective is to spread the idea of TownSquare. We aim to form actionable plans in this regards, and not interested in endless argument, unactionable ideologies, etc.</p>
+                    <p>&nbsp; &nbsp; &nbsp; &nbsp; This group is for those who are ready for action, not those who like to argue for the sake of arguing. The foreseeable objective is to spread the idea of TownSquare. We aim to form actionable plans in this regards, and not interested in endless arguments, unactionable ideologies, etc.</p>
                     <p><br /></p>
                     <p>&nbsp; &nbsp; 3. No bigots</p>
-                    <p>&nbsp; &nbsp; &nbsp; &nbsp; The founder of this group is an immigrant, part of LGBTQ, and visible minority...so don&apos;t make things awkward by being a bigot.</p>
+                    <p>It feels sad to have to say this, but do conduct yourself in a civil manner, and don't hate or discriminate.</p>
+                    <p>&nbsp; &nbsp; &nbsp; &nbsp; The founder of this group is an immigrant, part of LGBTQ, and visible minority...so don&apos;t make things awkward please.</p>
                     <p><br /></p>
                     <p><br /></p>
                     <div>
