@@ -83,19 +83,19 @@ const ReasonsModal = ({isOpen, setIsOpen}) => {
         else {
             tempUpdateArray[1] = option.value;
             if (option.value === "secondSocialYes") {
-                setFinalText("secondSocialYes");
+                setFinalText("Glad that you are satisfied with both the economic and social landscape. Life is good, but could be better!");
             }
             if (option.value === "secondSocialNo") {
-                setFinalText("secondSocialNo");
+                setFinalText("Agreed, and our society is now more fractured than ever.");
             }
             if (option.value === "secondCulpritElites") {
-                setFinalText("secondCulpritElites");
+                setFinalText("If the elites do exists, then TownSquare will be the bane of their existence.");
             }
             if (option.value === "secondCulpritCapitalism") {
-                setFinalText("secondCulpritCapitalism");
+                setFinalText("Either we transcent capitalism, or it will be the end of us.");
             }
             if (option.value === "secondCulpritHumanNature") {
-                setFinalText("secondCulpritHumanNature");
+                setFinalText("Right. Any system is only as good as the people within it.");
             }
         }
 
@@ -132,23 +132,18 @@ const ReasonsModal = ({isOpen, setIsOpen}) => {
         console.log(answerArray);
 
         if(answerArray.includes("initialYes") && answerArray.includes("secondCulpritElites")) {
-            console.log("111");
             router.push('/why/elites');
         }
         if(answerArray.includes("initialYes") && answerArray.includes("secondCulpritCapitalism")) {
-            console.log("222");
             router.push('/why/capitalism');
         }
         if(answerArray.includes("initialYes") && answerArray.includes("secondCulpritHumanNature")) {
-            console.log("333");
             router.push('/why/humannature');
         }
         if(answerArray.includes("initialNo") && answerArray.includes("secondSocialYes")) {
-            console.log("444");
             router.push('/why/empowerment');
         }
         if(answerArray.includes("initialNo") && answerArray.includes("secondSocialNo")) {
-            console.log("555");
             router.push('/why/bettersocialmedia');
         }
     }
@@ -178,7 +173,7 @@ const ReasonsModal = ({isOpen, setIsOpen}) => {
                 disabled={!hasAnswered}
                 className={`mt-4 w-full ${hasAnswered && "text-[blue]"}`}
             >
-                {currentQuestion === INITIAL_LSC ? "Next" : "Finish"}
+                {currentQuestion === INITIAL_LSC ? "Next" : "See result"}
             </button>
         </BaseModal>
     );
