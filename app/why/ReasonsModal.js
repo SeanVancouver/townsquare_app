@@ -144,7 +144,7 @@ const ReasonsModal = ({isOpen, setIsOpen}) => {
             router.push('/why/empowerment');
         }
         if(answerArray.includes("initialNo") && answerArray.includes("secondSocialNo")) {
-            router.push('/why/bettersocialmedia');
+            router.push('/why/socialmedia');
         }
     }
 

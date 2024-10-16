@@ -18,7 +18,7 @@ const Index = () => {
         }}><u><strong>this quiz</strong></u></span> and you will be directed to the most suitable one.</p>
         <ol>
           <li><Link href="/why/empowerment">Empowerment</Link></li>
-          <li><Link href="/why/bettersocialmedia">Better social media</Link></li>
+          <li><Link href="/why/socialmedia">Better social media</Link></li>
           <li><Link href="/why/capitalism">Capitalism</Link></li>
           <li><Link href="/why/elites">Elites</Link></li>
           <li><Link href="/why/people">People</Link></li>

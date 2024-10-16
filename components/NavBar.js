@@ -29,8 +29,8 @@ const NavBar = () => {
         else if (path.startsWith('/why/empowerment')) {
             setActiveLink('/why/empowerment');
         }
-        else if (path.startsWith('/why/bettersocialmedia')) {
-            setActiveLink('/why/bettersocialmedia');
+        else if (path.startsWith('/why/socialmedia')) {
+            setActiveLink('/why/socialmedia');
         }
         else if (path.startsWith('/why/elites')) {
             setActiveLink('/why/elites');
@@ -62,8 +62,8 @@ const NavBar = () => {
     }, [pathname]);
 
     return (
-        <div style={{ position: 'relative' }}>
-            <div style={{ position: 'fixed', top: 0, display: "flex", gap: "20px", alignItems: "center" }} className='bg-[blanchedalmond]'>
+        <>
+            <div style={{ position: 'sticky', top: 0, display: "flex", gap: "20px", alignItems: "center" }} className='bg-[white]'>
                 <Link className={`${activeLink === "/what" && 'bg-[aqua]'}`} href="/" onClick={() => setActiveLink("/what")}>What</Link>
                 <div style={{ position: 'relative' }} >
                     <button className={`${activeLink.startsWith("/why") && 'bg-[aqua]'}`} onClick={toggleDropdown} style={{ cursor: 'pointer' }} ref={dropdownRef}>
@@ -83,7 +83,7 @@ const NavBar = () => {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 <Link className={`${activeLink === "/why" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why")} href="/why">Take quiz</Link>
                                 <Link className={`${activeLink === "/why/empowerment" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/empowerment")} href="/why/empowerment">1. Empowerment</Link>
-                                <Link className={`${activeLink === "/why/bettersocialmedia" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/bettersocialmedia")} href="/why/bettersocialmedia">2. Better social media</Link>
+                                <Link className={`${activeLink === "/why/socialmedia" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/socialmedia")} href="/why/socialmedia">2. Better social media</Link>
                                 <Link className={`${activeLink === "/why/capitalism" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/capitalism")} href="/why/capitalism">3. Capitalism</Link>
                                 <Link className={`${activeLink === "/why/elites" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/elites")} href="/why/elites">4. Elites</Link>
                                 <Link className={`${activeLink === "/why/humannature" && 'bg-[aqua]'}`} onClick={() => setActiveLink("/why/humannature")} href="/why/people">5. People</Link>
@@ -95,7 +95,9 @@ const NavBar = () => {
                 <Link className={`${activeLink === "/who" && 'bg-[aqua]'}`} href="/who" onClick={() => setActiveLink("/who")}>Who</Link>
             </div>
             <img src="https://media.cntraveler.com/photos/5c240136e223c55afc3e4206/16:9/w_2240,c_limit/Vancouver-Art-Gallery_VAG-ARCH-2006-015.jpg" alt="Girl in a jacket" width="500" height="600" className="mt-16" />
-        </div>
+
+        </>
+
     );
 };
 

@@ -36,6 +36,8 @@ const Index = () => {
       </div>
 
       <div>
+        <p>Previous reason: <Link href="/why/capitalism">Capitalism</Link></p>
+
         <p>Next reason: <Link href="/why/peole">People</Link></p>
       </div>
     </>

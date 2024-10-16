@@ -38,6 +38,7 @@ const Index = () => {
       </div>
 
       <div>
+        <p>Previous reason: <Link href="/why/socialmedia">Social media</Link></p>
         <p>Next reason: <Link href="/why/elites">elites</Link></p>
       </div>
     </>

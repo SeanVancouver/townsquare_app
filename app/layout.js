@@ -1,6 +1,5 @@
 import Footer from "@/components/Footer";
 import "./globals.css";
-import NavigationBar from "@/components/NavigationBar";
 import { NavbarProvider } from "@/contexts/AppContext";
 import NavBar from "@/components/NavBar";
 
