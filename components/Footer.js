@@ -1,62 +1,60 @@
 'use client'
 
-import { useEffect, useState } from 'react';
-import JoinModal from './JoinModal';
+import { useEffect } from 'react';
 import Link from 'next/link';
 
 const Footer = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Find the target div where you want to inject the script
     const embedDiv = document.getElementById('ck_embed');
 
     if (embedDiv) {
-      // Create a script element
       const script = document.createElement('script');
 
-      // Set the script attributes
       script.src = 'https://townsquare.ck.page/2c21689ef3/index.js';
       script.async = true;
       script.setAttribute('data-uid', '2c21689ef3');
 
-      // Append the script to the div
       embedDiv.appendChild(script);
+
+      // const interval = setInterval(() => {
+      //   const unwantedElement = document.querySelector('.formkit-powered-by-convertkit-container');
+      //   if (unwantedElement) {
+      //     unwantedElement.remove();
+      //     clearInterval(interval); 
+      //   }
+      // }, 100);
+
+      script.onload = () => {
+        const unwantedElement = document.querySelector('.formkit-powered-by-convertkit-container');
+        const convertkitForm = document.querySelector('#ck_embed form');
+
+        if (unwantedElement) {
+          unwantedElement.remove();
+          convertkitForm.style.width = '100%';
+        }
+      }
     }
 
-    // Clean up the script if the component unmounts
     return () => {
       if (embedDiv) {
-        embedDiv.innerHTML = ''; // Remove the script and any content it generated
+        embedDiv.innerHTML = '';
       }
     };
   }, []);
 
   return (
     <>
-      <div>
-        <div id="ck_embed" className='flex-1'></div>
-        <div className='flex'>
-          <p>Contact email: <span>someone@townsquare.com</span></p>
-          <p>Youtube channel: <span>whatever URL</span></p>
-          <div>
-            <Link href="/join">Join us</Link>
-          </div>
-        </div>
+      <div className='bg-[lightblue] pb-10 mt-12 px-[30px]'>
+        <div id="ck_embed" className='flex justify-center '></div>
+        <div className='flex max-w-[700px] w-full flex sm:justify-evenly md:flex-row m-auto flex-col items-center mt-4'>
+          <div className='flex items-center'><img width={'30'} src="assets/email-1-svgrepo-com.svg" /><a className='ml-[0.2rem]' href="mailto:myemailaddress@gmail.com">someone@townsquare.com</a></div>
+          <div className='flex items-center mb-6 mt-5 md:mt-0 md:mb-0'><img width={'30'} src="assets/youtube-color-svgrepo-com.svg" /> <a className='ml-[0.4rem]'>name of channel</a></div>
 
+          <Link href="/join"><button className='w-[200px] h-10 bg-[crimson] text-[white] text-base rounded-[5px] ' style={{border: 'none'}}>Join us</button></Link>
+
+        </div>
       </div>
-
-
-      {/* <div className='flex'>
-        <img src="/assets/uncle-sam-29972_640.png" />
-        <div>
-          <p>Do you have what it takes? We need good and driven people to help make TownSquare happen.</p>
-          <button onClick={() => {
-            setIsOpen(true);
-          }}>JOIN US</button>
-        </div>
-      </div> */}
-      {/* <JoinModal isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </>
   );
 }

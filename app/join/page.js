@@ -31,7 +31,7 @@ function page() {
                 <p>&nbsp; &nbsp; &nbsp; &nbsp; If you are interested because you like to fight wealth inequality or the elites, know that this group is NOT looking to have discussion on what the solution is, for it has already been decided to be TownSquare. Accept this or otherwise there are certainly more open ended groups for you to join.</p>
                 <p><br /></p>
                 <p>&nbsp; &nbsp; 2. We are action based&nbsp;</p>
-                <p>&nbsp; &nbsp; &nbsp; &nbsp; This group is for those who are ready for action, not those who like to argue for the sake of arguing. The foreseeable objective is to spread the idea of TownSquare. We aim to form actionable plans in this regards, and not interested in endless arguments, unactionable ideologies, etc.</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp; This group is for those who are ready for action. The foreseeable objective is to spread the idea of TownSquare. We aim to form actionable plans in this regards, and not interested in endless arguments, unactionable ideologies, constant news sharing, etc.</p>
                 <p><br /></p>
                 <p>&nbsp; &nbsp; 3. No bigots</p>
                 <p>It feels sad to have to say this, but do conduct yourself in a civil manner, and don't hate or discriminate.</p>
