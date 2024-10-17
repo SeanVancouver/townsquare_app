@@ -19,13 +19,13 @@ export default function Home() {
 
         <article>
           <h2>TownSquare project:</h2>
-          <div className="flex">
+          <div className="md:flex">
 
-            <iframe width="420" height="315"
+            <iframe className="flex-1"
               src="https://www.youtube.com/embed/tgbNymZ7vqY">
             </iframe>
 
-            <div>
+            <div className="flex-1">
 
               <p>The TownSquare project is an open sourced social media platform fully dedicated to the needs and desires of a city. It allows its inhabitants to find, communicate and organize together. Just like how cities have physical infrastructure like roads and buses to facilitate the flow of goods, they should also have a virtual infrastructure to facilitate the flow of information.</p>
               <p>By focusing on a city instead of a vast undefined geographical area, TownSquare allows:</p>

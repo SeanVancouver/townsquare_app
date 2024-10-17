@@ -78,12 +78,14 @@ const NavBar = () => {
 
     return (
         <>
-            <div style={{ position: 'sticky', top: 0, display: "flex", gap: "20px", alignItems: "center", justifyContent: 'space-evenly', height: '4rem', zIndex: 10}} className='bg-[white]'>
-                <Link className={`${activeLink !== "/what" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/">What</Link>
+            <div style={{
+                position: 'sticky', top: 0, display: "flex", gap: "20px", alignItems: "center", justifyContent: 'space-evenly', height: '4rem', zIndex: 10, backgroundColor: 'darkgreen',
+            }} className='bg-[white]'>
+                <Link className={`${activeLink !== "/what" && 'no-underline'} text-[white]  underline-offset-8 md:text-[1.6rem]`} href="/">What</Link>
                 <div style={{ position: 'relative' }} >
-                    <span className={`${activeLink.startsWith("/why") && 'underline'} underline-offset-8 text-[1.6rem]`} onClick={toggleDropdown} style={{ cursor: 'pointer' }} ref={dropdownRef}>
-                        Why {isDropdownOpen ? '▲' : '▼'}
-                    </span>
+                    <div className={`text-[white] ${activeLink.startsWith("/why") && 'underline'} underline-offset-8 md:text-[1.6rem]`} onClick={toggleDropdown} style={{ cursor: 'pointer' }} ref={dropdownRef}>
+                        Why {isDropdownOpen ? <span className='text-[0.6rem] md:text-[1rem]'>▲</span> : <span className='text-[0.6rem] md:text-[1rem]'>▼</span>}
+                    </div>
                     {isDropdownOpen && (
                         <div style={{
                             position: 'absolute',
@@ -94,22 +96,22 @@ const NavBar = () => {
                             borderRadius: '4px',
                             padding: '10px',
                             zIndex: 10,
-                            width: 'max-content'
+                            width: 'max-content',
                         }}>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                                <Link className={`${activeLink !== "/why" && 'no-underline'} underline-offset-4`} href="/why">Take quiz</Link>
-                                <Link className={`${activeLink !== "/why/empowerment" && 'no-underline'} underline-offset-4`} href="/why/empowerment">1. Empowerment</Link>
-                                <Link className={`${activeLink !== "/why/socialmedia" && 'no-underline'} underline-offset-4`} href="/why/socialmedia">2. Social media</Link>
-                                <Link className={`${activeLink !== "/why/capitalism" && 'no-underline'} underline-offset-4`} href="/why/capitalism">3. Capitalism</Link>
-                                <Link className={`${activeLink !== "/why/elites" && 'no-underline'} underline-offset-4`} href="/why/elites">4. Elites</Link>
-                                <Link className={`${activeLink !== "/why/people" && 'no-underline'} underline-offset-4`} href="/why/people">5. People</Link>
+                                <Link className={`${activeLink !== "/why" && 'no-underline'} underline-offset-4 text-[1.2rem] leading-6`} href="/why">Take quiz</Link>
+                                <Link className={`${activeLink !== "/why/empowerment" && 'no-underline'} underline-offset-4 text-[1.2rem] leading-6`} href="/why/empowerment">1. Empowerment</Link>
+                                <Link className={`${activeLink !== "/why/socialmedia" && 'no-underline'} underline-offset-4 text-[1.2rem] leading-6`} href="/why/socialmedia">2. Social media</Link>
+                                <Link className={`${activeLink !== "/why/capitalism" && 'no-underline'} underline-offset-4 text-[1.2rem] leading-6`} href="/why/capitalism">3. Capitalism</Link>
+                                <Link className={`${activeLink !== "/why/elites" && 'no-underline'} underline-offset-4 text-[1.2rem] leading-6`} href="/why/elites">4. Elites</Link>
+                                <Link className={`${activeLink !== "/why/people" && 'no-underline'} underline-offset-4 text-[1.2rem] leading-6`} href="/why/people">5. People</Link>
                             </div>
                         </div>
                     )}
                 </div>
-                <Link className={`${activeLink !== "/how" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/how">How</Link>
-                <Link className={`${activeLink !== "/who" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/who">Who</Link>
-                <Link className={`${activeLink !== "/join" && 'no-underline'} text-[black] underline-offset-8 text-[1.6rem]`} href="/join">Join</Link>
+                <Link className={`${activeLink !== "/how" && 'no-underline'} text-[white]  underline-offset-8 md:text-[1.6rem]`} href="/how">How</Link>
+                <Link className={`${activeLink !== "/who" && 'no-underline'} text-[white] underline-offset-8 md:text-[1.6rem]`} href="/who">Who</Link>
+                <Link className={`${activeLink !== "/join" && 'no-underline'} text-[white] underline-offset-8 md:text-[1.6rem]`} href="/join">Join</Link>
             </div>
             {/* <img src="https://media.cntraveler.com/photos/5c240136e223c55afc3e4206/16:9/w_2240,c_limit/Vancouver-Art-Gallery_VAG-ARCH-2006-015.jpg" alt="Girl in a jacket" width="500" height="600" /> */}
             <div className='w-full'>
