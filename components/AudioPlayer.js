@@ -1,7 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react';
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ source }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
@@ -33,12 +33,14 @@ const AudioPlayer = () => {
   }, []);
 
   return (
-    <div>
-      <button onClick={togglePlayPause} style={{ fontSize: '24px', cursor: 'pointer' }}>
-        {isPlaying ? '⏸️' : '▶️'}
-      </button>
-      <audio ref={audioRef} src="/audio/sample.mp3" />
-    </div>
+    <>
+      <p onClick={togglePlayPause} className='underline' style={{ fontSize: '1.2rem', cursor: 'pointer', textUnderlineOffset: '0.5rem', marginTop: 0 }}>Audio version: {isPlaying ? '⏸️' : '▶️'}</p>
+      {/* <button onClick={togglePlayPause} style={{ fontSize: '24px', cursor: 'pointer' }}>
+
+        
+      </button> */}
+      <audio ref={audioRef} src={source} />
+    </>
   );
 };
 

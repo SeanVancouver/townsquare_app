@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
 import Link from 'next/link';
+import AudioPlayer from '@/components/AudioPlayer';
 
 export default function Home() {
   return (
@@ -10,36 +10,28 @@ export default function Home() {
       </Header> */}
       <div>
 
-        <article>
-          <h2>TownSquare movement:</h2>
-          <p>You have stumbled upon perhaps the most important movement of this century.</p>
-          <p>The Townsquare movement aims to achieve the creation of the Townsquare project, a social infrastructure for the inhabitants of a city.</p>
-          <p>The movement is in its infancy, and we need good people like you to help it succeed.</p>
-        </article>
+        <article className="leading-8 m-0 px-4 py-8 text-[1.2rem]">
+        <AudioPlayer source={'/audio/main_page.mp3'} />
 
-        <article>
-          <h2>TownSquare project:</h2>
-          <div className="md:flex">
+          <p>TownSquare is possibly the most important project in this century, due to the snowball effect of social changes it can bring.</p>
+          <p>It is a social media platform based on a simple, yet revolutionary concept and philosophy; that the social media should be integrated into a city&apos;s infrastructure.&nbsp;</p>
+          <p>Just like how cities have physical infrastructure like road and transportations to facilitate physical exchange, they should also have a virtual infrastructure to facilitate information exchange and organizing.</p>
+          <p>Currently, all the social media models are based on satisfying one particular social need, then expand geographically, think LinkedIn for work, Facebook for friends, Tinder for relationship. While this works to maximize users and profit, it is too simplified to account for the complexity of human psychology and social behavior.</p>
+          <p>Think about how medieval town squares are. It is a single gathering point that hosts all the social functions, whether it is the markets, entertainments, speeches, news, discussions, or protests.&nbsp;</p>
 
-            <iframe className="flex-1"
-              src="https://www.youtube.com/embed/tgbNymZ7vqY">
-            </iframe>
+          <p>People interact with each other with all their humanities and uniqueness, form bounds and open up new possibilities. Even if two people are not a good match for one social need, they may be perfect for something else. We are evolved to interact organically, not reduced to curated numbers and stats.</p>
 
-            <div className="flex-1">
+          <p>Of course it is no longer cost efficient for everyone to travel to one place nowadays, but the principles of human social interactions has not changed. Online or physical, we still need a &quot;town square&quot; as gathering point, instead of the fragmented social landscape we have today.</p>
 
-              <p>The TownSquare project is an open sourced social media platform fully dedicated to the needs and desires of a city. It allows its inhabitants to find, communicate and organize together. Just like how cities have physical infrastructure like roads and buses to facilitate the flow of goods, they should also have a virtual infrastructure to facilitate the flow of information.</p>
-              <p>By focusing on a city instead of a vast undefined geographical area, TownSquare allows:</p>
-              <ul>
-                <li><strong>More feature to the user</strong>: It can focus on empowering the user by giving them unprecedented features and reach, such as:<ol>
-                  <li>Filtering everyone by a set of highly customizable criteria</li>
-                  <li>Then message all the matched users at once</li>
-                </ol>
-                </li>
-                <li><strong>Adaptability</strong>: It can evolve with the city, by constantly changing its social landscape and responding to its ever changing need.</li>
-              </ul>
-            </div>
+          <p>The TownSquare project is specifically design to accomplish this. It limits the area serve to that of a city, which is where most people care about anyway when they socialize.</p>
 
-          </div>
+          <p>By doing so, we trade the geographical scaling for the quality and depth of social interactions. This grant you, as the user, unprecedented possibilities, such as:</p>
+
+          <p>&nbsp; &nbsp; - Messaging everyone in the city, or any target group, at the click of a button.&nbsp;</p>
+
+          <p>&nbsp; &nbsp; - Filter the entire city to find anyone by any specific custom criteria.</p>
+
+          <p>It is a platform by the people and for the people. By evolving with the city it helps transform, it aims to satisfy any needs and desires of its inhabitant. Sky is the limit.&nbsp;</p>
 
 
           <p>Next: watch a demo app <a href="https://youtu.be/TWWylIMUOBg?si=eiqCtLQEsDrQDHJM" target="_blank" rel="noopener noreferrer"><span className="text-2xl"><strong>here</strong></span></a>, or see why TownSquare matters <Link className="text-2xl" href="/why"><u><strong>here</strong></u></Link></p>

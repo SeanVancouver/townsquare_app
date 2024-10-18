@@ -4,7 +4,7 @@ import AudioPlayer from '@/components/AudioPlayer';
 const Index = () => {
   return (
     <>
-      <AudioPlayer />
+      <AudioPlayer source={'/audio/main_page.mp3'} />
       <div>
         <p>In 1958, the Chinese Communist Party launched the Great Leap Forward, where private farms where replaced by communal ones with harsh production quotas. The peasants were told that the quota were set according to the production level of other villages, and often have their crops forcefully confisticated to meet it.</p>
         <p><br /></p>
