@@ -1,10 +1,17 @@
+'use client'
 import Link from 'next/link';
 import AudioPlayer from '@/components/AudioPlayer';
+import { useEffect } from 'react';
 
 const Index = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <article className="leading-8 m-0 px-4 py-8 sm:text-[1.2rem]">
+      <article className="leading-6 m-0 px-8 py-8 sm:text-[1.2rem]">
         <AudioPlayer source={'/audio/why_capitalism.mp3'} />
         <p>Picture this. You are working hard to keep your job from being given away to someone more hardworking or cheaper. But the harder you work, the faster the AI watching you learn, and the faster you&apos;ll get replaced.&nbsp;</p>
         

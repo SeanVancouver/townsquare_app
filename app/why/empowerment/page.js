@@ -1,10 +1,17 @@
+'use client'
 import Link from 'next/link';
 import AudioPlayer from '@/components/AudioPlayer';
+import { useEffect } from 'react';
 
 const Index = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <article className="leading-8 m-0 px-4 py-8 sm:text-[1.2rem]">
+      <article className="leading-6 m-0 px-8 py-8 sm:text-[1.2rem]">
         <AudioPlayer source={'/audio/why_empowerment.mp3'}/>
 
         <p>There is a saying that &quot;Birds born in a cage think flying is an illness&quot;. This quote means that people prefers to stay with what they know and are afraid of the unknown, even if the unknown could be exponentially better.</p>

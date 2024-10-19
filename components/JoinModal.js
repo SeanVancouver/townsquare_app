@@ -24,7 +24,8 @@ const JoinModal = ({ isOpen, setIsOpen }) => {
 
     return (
         <BaseModal isOpen={isOpen} clearForm={clearForm}>
-            <p>Welcome!</p>
+            <h1>Welcome</h1>
+            <p>In the Facebook and Discord groups below, you'll find awesome like minded people like you. Let's make history together!</p>
         </BaseModal>
     )
 }

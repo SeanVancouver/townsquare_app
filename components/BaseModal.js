@@ -26,11 +26,11 @@ const BaseModal = ({ isOpen, clearForm, children }) => {
             e.stopPropagation();
             clearForm();
         }}>
-            <div className="absolute bg-red-500 w-full h-full sm:w-[500px] sm:h-[500px] -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-[30] box-border p-8" onClick={(e) => { e.stopPropagation() }}>
+            <div className="absolute bg-white w-full h-full sm:w-[500px] sm:h-[500px] -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-[30] box-border p-8" onClick={(e) => { e.stopPropagation() }}>
                 <p className='absolute top-0 right-0  cursor-pointer underline pr-8' onClick={() => {
                     clearForm();
                 }}>Close</p>
-                <div className='overflow-y-scroll h-full'>
+                <div className='overflow-y-scroll h-full flex items-center flex-col justify-center'>
                     {children}
                 </div>
             </div>

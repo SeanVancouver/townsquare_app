@@ -1,6 +1,6 @@
 'use client'
 
-import { useState , useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'
 import BaseModal from '@/components/BaseModal'
 
@@ -8,19 +8,19 @@ const INITIAL_LSC = "INITIAL_LSC";
 const SECOND_SOCIAL = "SECOND_SOCIAL";
 const SECOND_CULPRIT = "SECOND_CULPRIT";
 
-const ReasonsModal = ({isOpen, setIsOpen}) => {
- 
+const ReasonsModal = ({ isOpen, setIsOpen }) => {
+
     const router = useRouter();
 
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
         } else {
-            document.body.style.overflow = ''; 
+            document.body.style.overflow = '';
         }
 
         return () => {
-            document.body.style.overflow = ''; 
+            document.body.style.overflow = '';
         };
     }, [isOpen]);
 
@@ -49,16 +49,16 @@ const ReasonsModal = ({isOpen, setIsOpen}) => {
         SECOND_CULPRIT: {
             question: 'Who is the fundamental culprit?',
             options: [{
-                    display: "Elites",
-                    value: "secondCulpritElites"
-                }, {
-                    display: "Capitalism",
-                    value: "secondCulpritCapitalism"
-                }, 
-                {
-                    display: "HumanNature",
-                    value: "secondCulpritHumanNature"
-                }
+                display: "Elites",
+                value: "secondCulpritElites"
+            }, {
+                display: "Capitalism",
+                value: "secondCulpritCapitalism"
+            },
+            {
+                display: "People",
+                value: "secondCulpritHumanNature"
+            }
             ]
         },
     }
@@ -78,7 +78,7 @@ const ReasonsModal = ({isOpen, setIsOpen}) => {
 
         if (currentQuestion === INITIAL_LSC) {
             tempUpdateArray[0] = option.value;
-        } 
+        }
 
         else {
             tempUpdateArray[1] = option.value;
@@ -127,37 +127,39 @@ const ReasonsModal = ({isOpen, setIsOpen}) => {
     };
 
     const onComplete = () => {
-        console.log("ccc");
-        
+        console.log("ccc3");
+
         console.log(answerArray);
 
-        if(answerArray.includes("initialYes") && answerArray.includes("secondCulpritElites")) {
+
+
+        if (answerArray.includes("initialYes") && answerArray.includes("secondCulpritElites")) {
             router.push('/why/elites');
         }
-        if(answerArray.includes("initialYes") && answerArray.includes("secondCulpritCapitalism")) {
+        if (answerArray.includes("initialYes") && answerArray.includes("secondCulpritCapitalism")) {
             router.push('/why/capitalism');
         }
-        if(answerArray.includes("initialYes") && answerArray.includes("secondCulpritHumanNature")) {
-            router.push('/why/humannature');
+        if (answerArray.includes("initialYes") && answerArray.includes("secondCulpritHumanNature")) {
+            router.push('/why/people');
         }
-        if(answerArray.includes("initialNo") && answerArray.includes("secondSocialYes")) {
+        if (answerArray.includes("initialNo") && answerArray.includes("secondSocialYes")) {
             router.push('/why/empowerment');
         }
-        if(answerArray.includes("initialNo") && answerArray.includes("secondSocialNo")) {
+        if (answerArray.includes("initialNo") && answerArray.includes("secondSocialNo")) {
             router.push('/why/socialmedia');
         }
+
     }
 
 
     return (
         <BaseModal isOpen={isOpen} clearForm={clearForm}>
-            <div className="mt-14">
-                <h3 className="font-medium mb-2">{questionsObj[currentQuestion].question}</h3>
-                <div className="space-y-2">
+            <div>
+                <h3 className="font-medium mb-8 mt-0 text-[1.4rem]">{questionsObj[currentQuestion].question}</h3>
+                {/* <div className="space-y-2">
                     {questionsObj[currentQuestion].options.map((option, index) => (
                         <button
                             key={index}
-                            // variant={answers[currentQuestion] === option ? "default" : "outline"}
                             variant={"default"}
                             onClick={() => handleAnswerSelect(option)}
                             className={`w-full justify-start ${option.value === currentAnswer && 'bg-[aqua]'}`}
@@ -165,13 +167,28 @@ const ReasonsModal = ({isOpen, setIsOpen}) => {
                             {option.display}
                         </button>
                     ))}
+                </div> */}
+                <div className="space-y-2 mb-10">
+                    {questionsObj[currentQuestion].options.map((option, index) => (
+                        <label key={index} className="flex items-center space-x-2 w-full ">
+                            <input
+                                type="radio"
+                                name="options"
+                                value={option.value}
+                                checked={option.value === currentAnswer}
+                                onChange={() => handleAnswerSelect(option)}
+                                className="form-radio"
+                            />
+                            <span className='text-[1.4rem]'>{option.display}</span>
+                        </label>
+                    ))}
                 </div>
             </div>
-            {finalText && <p>{finalText}</p>}
+            {finalText && <p className='mb-2 mt-0'>{finalText}</p>}
             <button
                 onClick={handleNext}
                 disabled={!hasAnswered}
-                className={`mt-4 w-full ${hasAnswered && "text-[blue]"}`}
+                className={`w-full h-10 text-[1.2rem] bg-[lightcoral] rounded-[0.4rem] border-[thin]`}
             >
                 {currentQuestion === INITIAL_LSC ? "Next" : "See result"}
             </button>

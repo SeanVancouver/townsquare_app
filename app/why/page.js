@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import ReasonsModal from './ReasonsModal';
-import { useRouter } from 'next/navigation'
 
 const Index = () => {
 

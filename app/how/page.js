@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <article className="leading-8 m-0 px-4 py-8 sm:text-[1.2rem]">
+      <article className="leading-6 m-0 px-8 py-8 sm:text-[1.2rem]">
         <AudioPlayer source={'/audio/why_people.mp3'} />
         <p>TownSquare is an ambitious project, and it is difficult to nail a 100% working plan.</p>
 
@@ -69,7 +69,7 @@ export default function Home() {
           <p>All we need is for TownSquare to be implemented in one city in the world, and it will spread like wild fire across the world.</p>
         </div>
 
-        <p>The movement is still in its infancy, and we need good people to spread it. If you&apos;d like to be part of history, <Link href="/join">join here.</Link></p>
+        <p>The movement is still in its infancy, and we need good people like you to spread it. <Link href="/join">Join here.</Link></p>
 
       </article>
     </>

@@ -1,10 +1,18 @@
+'use client'
+
+import { useEffect } from 'react';
 import Link from 'next/link';
 import AudioPlayer from '@/components/AudioPlayer';
 
 const Index = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <article className="leading-8 m-0 px-4 py-8 sm:text-[1.2rem]">
+      <article className="leading-6 m-0 px-8 py-8 sm:text-[1.2rem]">
         <AudioPlayer source={'/audio/why_socialmedia.mp3'} />
         <p>The inventor of the internet, Tim Berners-Lee, once said: &quot;The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past.&quot;</p>
         
