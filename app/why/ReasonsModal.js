@@ -2,7 +2,7 @@
 
 import { useState , useEffect} from 'react';
 import { useRouter } from 'next/navigation'
-import BaseModal from '@/components/why/BaseModal'
+import BaseModal from '@/components/BaseModal'
 
 const INITIAL_LSC = "INITIAL_LSC";
 const SECOND_SOCIAL = "SECOND_SOCIAL";

@@ -29,9 +29,12 @@ const Footer = () => {
         const unwantedElement = document.querySelector('.formkit-powered-by-convertkit-container');
         const convertkitForm = document.querySelector('#ck_embed form');
 
+        const contentDiv = convertkitForm.querySelector('div');
+
         if (unwantedElement) {
           unwantedElement.remove();
           convertkitForm.style.width = '100%';
+          contentDiv.style.paddingTop = '0';
         }
       }
     }
@@ -55,7 +58,11 @@ const Footer = () => {
           <Link href="/join"><button className='w-[200px] h-10 bg-[crimson] text-[white] text-base rounded-[5px] ' style={{border: 'none'}}>Join us</button></Link>
 
         </div>
-        <div id="ck_embed" className='flex justify-center pb-8'></div>
+
+        <div className='mt-8'>
+          <p>Subscribe to our newsletter (email confirmation required)</p>
+          <div id="ck_embed" className='flex justify-center pb-8'></div>
+        </div>
 
       </div>
     </>

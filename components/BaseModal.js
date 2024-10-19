@@ -22,12 +22,12 @@ const BaseModal = ({ isOpen, clearForm, children }) => {
     }
 
     return (
-        <div className="fixed inset-0 bg-blue-500 w-full h-full z-[20]" onClick={(e) => {
+        <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)'}} className='fixed inset-0 bg-black w-full h-full z-[20]' onClick={(e) => {
             e.stopPropagation();
             clearForm();
         }}>
-            <div className="absolute bg-red-500 w-6/12 h-1/2 -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-[5]" onClick={(e) => { e.stopPropagation() }}>
-                <p className='absolute top-0 right-0 cursor-pointer underline' onClick={() => {
+            <div className="absolute bg-red-500 w-full h-full sm:w-[500px] sm:h-[500px] -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-[30] box-border p-8" onClick={(e) => { e.stopPropagation() }}>
+                <p className='absolute top-0 right-0  cursor-pointer underline pr-8' onClick={() => {
                     clearForm();
                 }}>Close</p>
                 <div className='overflow-y-scroll h-full'>
