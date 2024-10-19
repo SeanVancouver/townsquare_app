@@ -11,14 +11,14 @@ const Index = () => {
 
   return (
     <>
-      <article>
+      <article className="leading-8 m-0 px-4 py-8 text-[1.2rem]">
         <p>As much as I&apos;d like to persuade you of the necessity of TownSquare, it is difficult without knowing your proclivities/desires.&nbsp;</p>
-        <p>So I created the 5 reasons below. But if you don&apos;t want to read them all, answer <span className="text-2xl cursor-pointer underline" onClick={() => {
+        <p>Read them all, or answer <span className="text-2xl cursor-pointer underline" onClick={() => {
           setIsOpen(true);
-        }}><u><strong>this quiz</strong></u></span> and you will be directed to the most suitable one.</p>
+        }}><u><strong>this quiz</strong></u></span> to find the one that suits you.</p>
         <ol>
           <li><Link href="/why/empowerment">Empowerment</Link></li>
-          <li><Link href="/why/socialmedia">Better social media</Link></li>
+          <li><Link href="/why/socialmedia">Social media</Link></li>
           <li><Link href="/why/capitalism">Capitalism</Link></li>
           <li><Link href="/why/elites">Elites</Link></li>
           <li><Link href="/why/people">People</Link></li>

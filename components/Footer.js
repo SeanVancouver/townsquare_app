@@ -49,8 +49,8 @@ const Footer = () => {
         <h2 className='m-0 pt-8'>Awareness is key. Please help us spread TownSquare.</h2>
         <p>And if you would allow me to speak in your community/organization, use the email below with the subject "Speaking Engagement"</p>
         <div className='flex max-w-[700px] w-full flex sm:justify-evenly md:flex-row m-auto flex-col items-center mt-4'>
-          <div className='flex items-center'><img width={'30'} src="assets/email-1-svgrepo-com.svg" /><a className='ml-[0.2rem]' href="mailto:myemailaddress@gmail.com">someone@townsquare.com</a></div>
-          <div className='flex items-center mb-6 mt-5 md:mt-0 md:mb-0'><img width={'30'} src="assets/youtube-color-svgrepo-com.svg" /> <a className='ml-[0.4rem]'>name of channel</a></div>
+          <div className='flex items-center'><img width={'30'} src="/assets/email-1-svgrepo-com.svg" /><a className='ml-[0.2rem]' href="mailto:myemailaddress@gmail.com">someone@townsquare.com</a></div>
+          <div className='flex items-center mb-6 mt-5 md:mt-0 md:mb-0'><img width={'30'} src="/assets/youtube-color-svgrepo-com.svg" /> <a className='ml-[0.4rem]'>name of channel</a></div>
 
           <Link href="/join"><button className='w-[200px] h-10 bg-[crimson] text-[white] text-base rounded-[5px] ' style={{border: 'none'}}>Join us</button></Link>
 
